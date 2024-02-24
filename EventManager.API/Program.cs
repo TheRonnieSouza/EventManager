@@ -19,9 +19,14 @@ builder.Services.AddSwaggerGen(c =>
         Contact = new OpenApiContact
         {
             Name = "Ronnie",
+            Email = "ronniesouza50@gmail.com",
             Url = new Uri("https://www.linkedin.com/in/ronnie-souza?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app")
         }
     });
+
+    var xmlFile = "EventManager.API.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
 });
 
 var app = builder.Build();
